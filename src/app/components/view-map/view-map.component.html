@@ -1,0 +1,18 @@
+<div class="container">
+      <div class="form-group">
+        <label for="address">Address :</label>
+        <input type="text" class="form-control" id="address" [(ngModel)]="addressSelected" /><br />
+        <label>Latitude :</label>
+        <input type="text" placeholder="input latitude" [(ngModel)]="lat" />
+        <label>Longitude :</label>
+        <input type="text" placeholder="input longitude" [(ngModel)]="lng" />
+      </div>
+      <agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom" [disableDefaultUI]=false
+      [zoomControl]="true" (centerChange)="alertCenterChange()">
+        <agm-marker [latitude]="lat" [longitude]="lng"
+        [markerDraggable]="true"
+        [iconUrl]="icon"
+        (dragEnd)="markerDragEnd($event)"
+        ></agm-marker>
+      </agm-map>
+    </div>

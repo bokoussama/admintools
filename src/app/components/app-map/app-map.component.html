@@ -1,0 +1,40 @@
+<div class="starter-template">
+	<div class="row">
+		<div class="col-md-12">
+    	<div id="map">
+    		<agm-map
+        [latitude]="latitude"
+        [longitude]="longitude"
+        [zoom]="zoom"
+        [disableDefaultUI]=false
+        [zoomControl]="true"
+        (mapClick)="mapClicked($event)">
+
+		  <agm-marker
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="markerClicked(m, i)"
+      [latitude]="m.latitude"
+      [longitude]="m.longitude"
+      [markerDraggable]="m.isDraggable"
+			[iconUrl]="m.icon"
+      (dragEnd)="markerDragEnd(m, $event)"
+      >
+        <agm-info-window>
+				<div id="content">
+					<div id="siteNotice">
+						( {{m.latitude}} , {{m.longitude}} )
+					</div>
+					<h1 id="firstHeading" class="firstHeading">{{m.name}}</h1>
+					<div id="bodyContent">
+						<strong>{{m.name}}</strong>
+						<b>{{m.name}}</b>, also referred to as <b>{{m.reference}}</b>
+						<br />Station infos : <a href="">link</a> (last visited June 22, 2009).
+					</div>
+				</div>
+        </agm-info-window>
+      </agm-marker>
+		</agm-map>
+    	</div>
+  	</div>
+	</div>
+</div>

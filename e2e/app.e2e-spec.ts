@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('veotools-ui App', () => {
+describe('transport-test App', () => {
   let page: AppPage;
 
   beforeEach(() => {

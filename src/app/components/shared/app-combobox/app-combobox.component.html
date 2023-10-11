@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label for="constructor">{{label}}</label>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary" name="selectOptions" ngbDropdownToggle>{{selected}}</button>
+    <div ngbDropdownMenu aria-labelledby="select manifacturer">
+      <button *ngFor="let item of choices" class="dropdown-item" (click)="updateSelected(item)" >{{item}}</button>
+    </div>
+  </div>
+</div>

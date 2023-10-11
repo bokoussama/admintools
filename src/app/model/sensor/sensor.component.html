@@ -1,0 +1,14 @@
+<form (ngSubmit)="saveVehicle()">
+  <div class="form-group">
+    <label for="driverlicence">Driver Licence:</label>
+    <input type="text" class="form-control" id="licence" aria-describedby="licence" placeholder="Enter driver licence">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input [(ngModel)]="isAlive" class="form-check-input" type="checkbox" aria-describedby="isAlive" [ngModelOptions]="{standalone: true}" />
+        Is Alive:
+      </label>
+    </div>
+    <app-datepicker label="Activation Date :" (timedate)="activationDate"></app-datepicker>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
