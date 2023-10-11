@@ -1,0 +1,11 @@
+<form (ngSubmit)="saveSO()">
+  <div class="form-group">
+    <label for="serviceorderName">Service Order Name:</label>
+    <input [(ngModel)]="serviceorder.label" type="text" class="form-control" aria-describedby="serviceorderName" placeholder="Enter service order name" />
+    <!--  -->
+  </div>
+  <div class="form-group">
+    <!-- <app-view-map [latitude]="serviceorder.parsedLocation.geometry.lat" [longitude]="serviceorder.parsedLocation.geometry.lng" [iconName]="marker-olive" (location)="updateLocation($event)" (address)="updateAddress($event)" ></app-view-map> -->
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
